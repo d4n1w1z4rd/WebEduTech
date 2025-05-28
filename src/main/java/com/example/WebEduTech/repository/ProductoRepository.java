@@ -15,13 +15,13 @@ public class ProductoRepository {
 
     public ProductoRepository(){
         //Agregar Productos por defecto
-        listaProductos.add(new Producto(10, "Python", 15990, 16,0));
-        listaProductos.add(new Producto(20, "Java", 17990, 20,0));
-        listaProductos.add(new Producto(30, "JavaScript", 21990, 24,0));
-        listaProductos.add(new Producto(40, "GitHub", 19990, 18,0));
+        listaProductos.add(new Producto(10, "Python", 15990, 16,50));
+        listaProductos.add(new Producto(20, "Java", 17990, 20,10));
+        listaProductos.add(new Producto(30, "JavaScript", 21990, 24,2));
+        listaProductos.add(new Producto(40, "GitHub", 19990, 18,5));
         listaProductos.add(new Producto(50, "PHP", 16990, 15,0));
         listaProductos.add(new Producto(60, "SQL", 25990, 24,0));
-        listaProductos.add(new Producto(70, "HTML", 19990, 20,0));
+        listaProductos.add(new Producto(70, "HTML", 19990, 20,1));
         listaProductos.add(new Producto(80, "CSS", 17990, 18,0));
     }
 

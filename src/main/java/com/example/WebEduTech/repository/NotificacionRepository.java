@@ -1,5 +1,7 @@
 package com.example.WebEduTech.repository;
 
+import com.example.WebEduTech.model.Notificacion;
+import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 

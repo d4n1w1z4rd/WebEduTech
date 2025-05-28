@@ -1,0 +1,27 @@
+body {
+    background: #f4f4f4;
+    animation: fadeIn 0.8s ease-in-out;
+    font-family: 'Orbitron',sans-serif;
+}
+
+.container {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    border-radius: 15px;
+    max-width: 900px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.container h2 {
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

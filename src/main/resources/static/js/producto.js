@@ -1,4 +1,4 @@
-function miFunc(e) { 
+function miFunc(e) {
     alert(e.target.textContent);
 }
 

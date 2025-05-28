@@ -31,10 +31,13 @@ const carrito = (() => {
     //Funcion para agregar un libro al carrito de compra
     async function agregarProducto(id) {
         try {
-            await fetch(`${API}/agregar/${id}`,
+            const response = await fetch(`${API}/agregar/${id}`,
                 {method: "POST"});
-            alert("Producto agregado al carrito");
+            const mensaje = await response.text();
+            alert(mensaje);
+
             listarCarrito();
+            listarProductos();
         } catch (err){
             console.error("Error al agregar al carrito", err);
         }

@@ -1,7 +1,7 @@
-package com.example.EduTech_Innovators_SPA.service;
+package com.example.WebEduTech.service;
 
-import com.example.EduTech_Innovators_SPA.model.usuario;
-import com.example.EduTech_Innovators_SPA.repository.usuarioRepository;
+import com.example.WebEduTech.model.usuario;
+import com.example.WebEduTech.repository.usuarioRepository;
 
 import java.util.Optional;
 

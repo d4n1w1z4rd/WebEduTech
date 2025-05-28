@@ -1,7 +1,7 @@
-package com.example.EduTech_Innovators_SPA.service;
+package com.example.WebEduTech.service;
 
-import com.example.EduTech_Innovators_SPA.model.Notificacion;
-import com.example.EduTech_Innovators_SPA.repository.NotificacionRepository;
+import com.example.WebEduTech.model.Notificacion;
+import com.example.WebEduTech.repository.NotificacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

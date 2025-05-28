@@ -1,7 +1,7 @@
-package com.example.EduTech_Innovators_SPA.service;
+package com.example.WebEduTech.service;
 
-import com.example.EduTech_Innovators_SPA.model.Producto;
-import com.example.EduTech_Innovators_SPA.repository.ProductoRepository;
+import com.example.WebEduTech.model.Producto;
+import com.example.WebEduTech.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;

@@ -7,7 +7,7 @@ function listarProductos() {
     fetch(API_URL)
         .then(response => response.json())
         .then(productos => {
-            const tbody = document.querySelector("#tablaproducto tbody");
+            const tbody = document.querySelector("#tablaProductos tbody");
             tbody.innerHTML = "";
             productos.forEach(producto => {
                 const fila = `

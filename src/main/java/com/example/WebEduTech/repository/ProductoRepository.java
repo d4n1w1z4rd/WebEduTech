@@ -1,8 +1,5 @@
 package com.example.WebEduTech.repository;
 
-import com.example.WebEduTech.model.Producto;
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 

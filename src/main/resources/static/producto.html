@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="styles_Productos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="./index.html">Página Principal</a></li>
+            <li><a href="./producto.html">Productos</a></li>
+            <li><a href="#">Contáctanos</a></li>
+            <li class="cart-icon"><a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+    </nav>
+    
+    <section class="product-section">
+        <h2>Nuestros Cursos</h2>
+        <div class="product-grid">
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./img/curso_python.jpg" alt="curso_python">
+                        <h3>Python</h3>
+                        <p>$15.990</p>
+                        <p>Duración: 16 Horas</p>
+                        <p>Disponibles: </p>
+                    </div>
+                    <div class="card-back">
+                        <p>Curso intensivo de Python desde cero. Aprende lógica, estructuras de datos y programación orientada a objetos.</p>
+                        <button class="buy-button" onclick="agregar_producto">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./img/java.jpg" alt="curso_java">
+                        <h3>Java</h3>
+                        <p>$17.990</p>
+                        <p>Duración: 20 Horas</p>
+                        <p>Disponibles: </p>
+                    </div>
+                    <div class="card-back">
+                        <p>Domina Java y construye aplicaciones robustas. Incluye fundamentos de POO y desarrollo de backend.</p>
+                        <button class="buy-button" onclick="agregar_producto">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./img/javascript.jpg" alt="curso_javascript">
+                        <h3>JavaScript</h3>
+                        <p>$21.990</p>
+                        <p>Duración: 24 Horas</p>
+                        <p>Disponibles: </p>
+                    </div>
+                    <div class="card-back">
+                        <p>Aprende JavaScript moderno para desarrollo web interactivo. Incluye ES6+, DOM y APIs.</p>
+                        <button class="buy-button" onclick="agregar_producto">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./img/github.png" alt="curso_github">
+                        <h3>Github</h3>
+                        <p>$19.990</p>
+                        <p>Duración: 18 Horas</p>
+                        <p>Disponibles: </p>
+                    </div>
+                    <div class="card-back">
+                        <p></p>
+                        <button class="buy-button" onclick="agregar_producto">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./img/PHP.png" alt="curso_php">
+                        <h3>PHP</h3>
+                        <p>$16.990</p>
+                        <p>Duración: 15 Horas</p>
+                        <p>Disponibles: </p>
+                    </div>
+                    <div class="card-back">
+                        <p></p>
+                        <button class="buy-button" onclick="agregar_producto">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./img/Sql.png" alt="curso_sql">
+                        <h3>SQL</h3>
+                        <p>$25.990</p>
+                        <p>Duración: 24 Horas</p>
+                        <p>Disponibles: </p>
+                    </div>
+                    <div class="card-back">
+                        <p></p>
+                        <button class="buy-button" onclick="agregar_producto">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./img/html.jpg" alt="curso_html">
+                        <h3>HTML</h3>
+                        <p>$19.990</p>
+                        <p>Duración: 18 Horas</p>
+                        <p>Disponibles: </p>
+                    </div>
+                    <div class="card-back">
+                        <p>Aprende y experimenta con el lenguaje informático HTML que te permite construir páginas web con textos, imágenes, links y mucho más. Iniciar el curso.</p>
+                        <button class="buy-button" onclick="agregar_producto">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="./img/css.jpg" alt="curso_css">
+                        <h3>CSS</h3>
+                        <p>$17.990</p>
+                        <p>Duración: 20 Horas</p>
+                        <p>Disponibles: </p>
+                    </div>
+                    <div class="card-back">
+                        <p>Aprende los fundamentos y bases sólidas de CSS desde 0. Este curso es para ti si quieres empezar en CSS.</p>
+                        <button class="buy-button" onclick="agregar_producto">Agregar Al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2025 EduTech. Todos los derechos reservados.</p>
+    </footer>
+    <script src="./js/app_carrito.js"></script>
+</body>
+</html>

@@ -19,16 +19,16 @@ function login(){
         }
     });
 }*/
-API_URL = "http://localhost:8080/api/v1/usuario/login"; //se conecta con el usuario 
+API_URL = "http://localhost:8080/api/v1/usuario/login"; //se conecta con el usuario
 
-function login(){ //se sincronisa la conexion login 
+function login(){ //se sincronisa la conexion login
     fetch(API_URL, {
-        method: "POST", //se agrega un objeto json 
-        headers:{"Content-Type": "application/json"}, // definiendo 
+        method: "POST", //se agrega un objeto json
+        headers:{"Content-Type": "application/json"}, // definiendo
         body: JSON.stringify({ //enviando la solicitud con el email y la clave
         email : document.getElementById("email").value,
-        password : document.getElementById("password").value  
-        })        
+        password : document.getElementById("password").value
+        })
     })
     .then(response => response.json()) // crear la variable que maneja la respuesta del objeto
     .then(data => { //

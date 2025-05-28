@@ -1,13 +1,15 @@
 package com.example.WebEduTech.repository;
 
-import com.example.EduTech_Innovators_SPA.model.Producto;
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
+import com.example.WebEduTech.model.Producto;
+
 @Repository
 public class ProductoRepository {
+
     // Arreglo que guardara todos los producto
     private List<Producto> listaProductos = new ArrayList<>();
 

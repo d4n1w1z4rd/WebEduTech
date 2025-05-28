@@ -1,10 +1,12 @@
 package com.example.WebEduTech.service;
 
-import com.example.WebEduTech.model.Producto;
-import com.example.WebEduTech.repository.ProductoRepository;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.List;
+
+import com.example.WebEduTech.model.Producto;
+import com.example.WebEduTech.repository.ProductoRepository;
 
 @Service
 public class ProductoService {
@@ -12,11 +14,11 @@ public class ProductoService {
     private ProductoRepository productoRepository;
 
     public List<Producto> getProductos(){
-         return productoRepository.obtenerProductos();
+        return productoRepository.obtenerProductos();
     }
     
     public Producto saveProducto(Producto producto){
-        return productoRepository.guardar(producto);    
+        return productoRepository.guardar(producto);
     }
 
     public Producto getProductoId(int id){

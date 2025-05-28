@@ -1,7 +1,7 @@
 const carrito = (() => {
     const API = "/api/v1/carrito";
 
-    //Funcion para mostrar el carrito 
+    //Funcion para mostrar el carrito
     async function listarCarrito() {
         try{
             const response = await fetch(API);
@@ -9,7 +9,7 @@ const carrito = (() => {
             const tbody = document.querySelector("#tablaCarrito tbody");
             const totalItems = document.getElementById("totalCarrito");
             tbody.innerHTML = "";
-            totalItems.textContent = productos.length; 
+            totalItems.textContent = productos.length;
 
             productos.forEach(producto => {
                 const fila = `
@@ -20,18 +20,18 @@ const carrito = (() => {
                         <td>
                             <button onclick ="carrito.eliminarProducto(${producto.id})">Eliminar</button>
                         </td>
-                    </tr>    
+                    </tr>
                 `;
                 tbody.innerHTML += fila;
             });
         } catch (err){
             console.error("Error al cargar el carrito", err);
         }
-    }    
+    }
     //Funcion para agregar un libro al carrito de compra
     async function agregarProducto(id) {
         try {
-            await fetch(`${API}/agregar/${id}`, 
+            await fetch(`${API}/agregar/${id}`,
                 {method: "POST"});
             alert("Producto agregado al carrito");
             listarCarrito();
@@ -51,7 +51,7 @@ const carrito = (() => {
             }
     }
 
-    //funcion par vaciar el carrito 
+    //funcion par vaciar el carrito
     async function vaciarCarrito() {
         if(confirm("¿Está seguro de vaciar el carrito de compra?")){
             await fetch(`${API}/vaciar`,

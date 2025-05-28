@@ -1,13 +1,16 @@
 package com.example.WebEduTech.repository;
 
-import com.example.EduTech_Innovators_SPA.model.Notificacion;
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
+import com.example.WebEduTech.model.Notificacion;
+
+
 @Repository
 public class NotificacionRepository {
+    
     private List<Notificacion> listaNotificaciones = new ArrayList<>();
 
     public NotificacionRepository() {

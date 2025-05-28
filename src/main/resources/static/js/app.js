@@ -17,10 +17,10 @@ function listarProductos() {
                         <td>${producto.precio}</td>
                         <td>${producto.horas}</td>
                         <td>${producto.stock}</td>
-                        <td> 
-                            <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${producto.id})">🗑️ Eliminar</button> 
+                        <td>
+                            <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${producto.id})">🗑️ Eliminar</button>
                             <button class="btn btn-warning btn-sm" onclick="buscarProducto(${producto.id})">✏️ Editar</button>
-                            <button class="btn btn-warning btn-sm" onclick="carrito.agregarProducto(${producto.id})">✏️ Agregar</button>  
+                            <button class="btn btn-warning btn-sm" onclick="carrito.agregarProducto(${producto.id})">✏️ Agregar</button>
                         </td>
                     </tr>
                 `;
@@ -79,8 +79,7 @@ function buscarProducto(id) {
             document.getElementById("stock").value = producto.stock;
 
              // Guardar el ID del libro en edición
-             productoenEdicionId = producto.id;
-             
+            productoenEdicionId = producto.id;
             // Cambiar el botón de agregar por actualizar
             const boton = document.getElementById("botonFormulario");
             if (boton) {

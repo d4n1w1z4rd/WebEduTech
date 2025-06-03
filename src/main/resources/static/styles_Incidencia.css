@@ -4,7 +4,7 @@ html, body {
     flex-direction: column;
 }
 
-/* all */
+ /*all*/ 
 
 * {
     margin: 0;
@@ -97,4 +97,9 @@ footer {
 
 .social-icons a:hover {
     color: #f4f4f4;
+}
+
+body .div{
+    margin-top: 10px;
+    padding: 10px;
 }

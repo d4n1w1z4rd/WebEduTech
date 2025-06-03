@@ -12,4 +12,5 @@ public class Notificacion {
     private int id;
     private String mensaje;
     private int usuarioId;
+    
 }

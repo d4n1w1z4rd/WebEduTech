@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reporte Incidencias Edu Tech</title>
+    <link rel="stylesheet" href="styles_Incidencia.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
+  <nav>
+    <ul class="navbar">
+        <li><a href="index.html">Página Principal</a></li>
+        <li><a href="registro.html">Registro</a></li>
+        <li><a href="producto.html">Productos</a></li>
+        <li class="cart-icon"><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+        <li><a href="notificaciones.html"><i class="fas fa-bell"></i> Notificaciones</a></li>
+        <button class="log-out" onclick="cerrarSesion()"> Cerrar Sesion </button>
+    </ul>
+  </nav>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <footer>
+      <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p>&copy; 2025 EduTech. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>

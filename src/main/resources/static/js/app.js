@@ -19,7 +19,6 @@ function listarProductos() {
                         <td>${producto.stock}</td>
                         <td>
                             <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${producto.id})">🗑️ Eliminar</button>
-                            <button class="btn btn-warning btn-sm" onclick="buscarProducto(${producto.id})">✏️ Editar</button>
                             <button class="btn btn-warning btn-sm" onclick="carrito.agregarProducto(${producto.id})">✏️ Agregar</button>
                         </td>
                     </tr>

@@ -21,7 +21,7 @@ public class IncidenciaRepository {
         listaIncidencias.add(new Incidencia(4, "Compre el curso erroneo"));
     }
 
-    public List<Incidencia> obtenerNotificaciones(){
+    public List<Incidencia> obtenerIncidencias(){
         return listaIncidencias;
     }
 }

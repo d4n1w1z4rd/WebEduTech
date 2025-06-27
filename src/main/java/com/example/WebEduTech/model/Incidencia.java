@@ -1,4 +1,4 @@
-package com.example.WebEduTech.repository;
+package com.example.WebEduTech.model;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;

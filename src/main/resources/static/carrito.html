@@ -4,22 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edu Tech carrito</title>
-     <link rel="stylesheet" href="styles_Carrito.css">
+    <link rel="stylesheet" href="styles_Carrito.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-        <nav>
+    <nav>
         <ul class="navbar">
-            <li><a href="./index.html">Página Principal</a></li>
-            <li><a href="./producto.html">Productos</a></li>
-            <li><a href="Incidencias.html">Contáctanos</a></li>
-            <li class="cart-icon"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-            <button class="btn btn-outline-danger mt-4" onclick="cerrarSesion()"> Cerrar Sesion </button>
+            <div class="navbar-left">
+                <li><a href="index.html">Página Principal</a></li>
+                <li><a href="producto.html">Productos</a></li>
+                <li class="cart-icon"><a href="carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+                <li class="notification-icon"><a href="#"><i class="fas fa-bell"></i><span class="notification-badge"></span></a>
+            </div>
+            <div class="navbar-right">
+                <li><button class="log-out" onclick="cerrarSesion()">Cerrar Sesión</button></li>
+            </div>
         </ul>
     </nav>
-    <body class="bg-light">
+
+    <main class="bg-light">
     <div class="container-fluid">
     <div class="container py-5">
         <h1 class="text-center mb-4"> Carrito</h1>
@@ -77,8 +82,20 @@
         </div>
         <p><strong>Total de Items: </strong> <span id ="totalCarrito">0</span></p>
     </div>
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2025 EduTech. Todos los derechos reservados.</p>
+    </footer>
+
     <script src = "js/app.js"></script>
     <script src = "js/app_index.js"></script>
     <script src = "js/app_carrito.js"></script>
-</body>
+</>
 </html>

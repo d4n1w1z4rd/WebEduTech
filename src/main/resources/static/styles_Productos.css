@@ -21,30 +21,58 @@ body {
 
 /* navbar */
 
-nav {
-    background-color: #333;
-    padding: 1rem 2rem;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-}
-
 .navbar {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 60px;
 }
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
 
 .navbar li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    font-size: 1rem;
 }
 
-.navbar li a:hover {
-    text-decoration: underline;
+.log-out {
+    color: white;
+    background-color: #2c5364;
+    border: none;
+    border-radius: 23px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    margin: 0;
+}
+
+.log-out:hover {
+    background-color: #1b3647;
+}
+
+nav {
+    background-color: #333;
+    padding: 0 2rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
 }
 
 /* cart */
@@ -93,7 +121,7 @@ footer {
 }
 
 .product-section {
-    padding: 5rem 2rem 3rem;
+    padding: 1rem 2rem 3rem;
     text-align: center;
     background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
     color: #00ffff;
@@ -103,7 +131,7 @@ footer {
     font-size: 2.5rem;
     margin-bottom: 2rem;
     text-shadow: 0 0 10px #00ffff;
-    padding: 7rem 2rem 3rem ;
+    padding: 4rem 2rem 1rem ;
 }
 
 .product-grid {
@@ -119,6 +147,8 @@ footer {
     perspective: 1000px;
     cursor: pointer;
     width: 300px;
+    margin: 20px;
+    height: 400;
 }
 
 .card-inner {

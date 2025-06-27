@@ -1,15 +1,30 @@
 package com.example.WebEduTech.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
 
-@Data //Genera getters, setters, toString, equals, hashCode y un constructor con los campos requeridos.
-@AllArgsConstructor // Genera un constructor con todos los campos.
-@NoArgsConstructor // Genera un constructor con todos los campos.
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
 public class Notificacion {
-    private int id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String mensaje;
-    private int usuarioId;
+
+    private LocalDateTime fecha = LocalDateTime.now();
+
+    public Notificacion() {
+        this.fecha = LocalDateTime.now();
+    }
+
+    public Notificacion(String mensaje) {
+        this.mensaje = mensaje;
+        this.fecha = LocalDateTime.now();
+    }
+
 }

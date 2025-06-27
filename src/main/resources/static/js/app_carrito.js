@@ -28,7 +28,7 @@ const carrito = (() => {
             console.error("Error al cargar el carrito", err);
         }
     }
-    //Funcion para agregar un libro al carrito de compra
+    //Funcion para agregar un producto al carrito de compra
     async function agregarProducto(id) {
         try {
             const response = await fetch(`${API}/agregar/${id}`,
@@ -42,7 +42,7 @@ const carrito = (() => {
             console.error("Error al agregar al carrito", err);
         }
     }
-    //funcion para eliminar un libro en el carrito de compras
+    //funcion para eliminar un producto en el carrito de compras
     async function eliminarProducto(id) {
         try{
             await fetch(`${API}/eliminar/${id}`,

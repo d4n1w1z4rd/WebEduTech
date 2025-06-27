@@ -24,11 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(productoController.class)
 public class productoControllerIntegrationTest {
 
-    @Test
-    void testName() {
-        
-    }
-
     @Autowired
     private MockMvc mockMvc;
 

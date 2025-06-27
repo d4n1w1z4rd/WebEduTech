@@ -2,14 +2,6 @@ package com.example.WebEduTech.Controller;
 
 import com.example.WebEduTech.controller.SistemaController;
 import com.example.WebEduTech.service.IncidenciaService;
-
-import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-
-package com.example.WebEduTech.Controller;
-
-import com.example.WebEduTech.Controller.SistemaController;
-import com.example.WebEduTech.service.IncidenciaService;
 import com.example.WebEduTech.service.NotificacionService;
 
 import org.junit.jupiter.api.Test;
@@ -19,8 +11,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import org.springframework.test.web.servlet.MockMvc;
-
-
 
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
@@ -34,18 +24,6 @@ public class SistemaControllerIntegrationTest {
     private MockMvc mockMvc;
 
     @MockBean
-
-    private IncidenciaService incidenciaService;
-
-    @Test
-    void crearIncidencia_returnOkYVerificaLlamado() throws Exception {
-        String descripcion = "Error en módulo de pagos";
-        String estado = "pendiente";
-
-        mockMvc.perform(post("/api/v1/incidencias/incidencia")
-                        .param("descripcion", descripcion)
-                        .param("estado", estado))
-
     private NotificacionService notificacionService;
 
     @MockBean
@@ -78,6 +56,4 @@ public class SistemaControllerIntegrationTest {
 
         verify(incidenciaService).reportar(descripcion, estado);
     }
-}
-
 }

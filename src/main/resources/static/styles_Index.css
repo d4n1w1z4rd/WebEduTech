@@ -1,0 +1,199 @@
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* all */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body */
+
+body {
+    font-family: 'Orbitron',sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* navbar */
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;  /* Distribuye los grupos izquierda/derecha */
+    align-items: center;             /* Centra verticalmente */
+    padding: 0;
+    margin: 0;
+    height: 60px;                    /* ✅ Altura fija y compacta */
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.log-out {
+    color: white;
+    background-color: #2c5364;
+    border: none;
+    border-radius: 23px;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    margin: 0;
+}
+
+.log-out:hover {
+    background-color: #1b3647;
+}
+
+nav {
+    background-color: #333;
+    padding: 0 2rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 60px;
+}
+
+/* cart */
+
+.cart-icon{
+    position: relative;
+}
+
+.cart-icon a {
+    font-size: 1.3rem;
+    color: #00ffff;
+    position: relative;
+}
+
+.cart-icon a:hover {
+    color: #fff;
+}
+
+
+/* footer */
+
+body > footer {
+    margin-top: auto;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: 3px;
+    width: 100%;
+}
+
+.social-icons {
+    margin-bottom: 0.5rem;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #f4f4f4;
+}
+
+/* about us */
+
+.about-us {
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+    padding: 3rem 2rem;
+    margin: 2rem auto;
+    border-radius: 15px;
+    max-width: 900px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 80px;
+}
+
+.about-container {
+    text-align: center;
+}
+
+.about-container h2 {
+    font-size: 2.5rem;
+    color: #00ffff;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #cbd5e1;
+}
+
+.about-container .highlight {
+    color: #00ffff;
+    font-weight: bold;
+}
+
+/* carousel */
+
+.carousel-section {
+    padding: 3rem 1rem;
+    background-color: #0f2027;
+    text-align: center;
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.carousel-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.carousel-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 1rem;
+}
+
+.carousel {
+    display: inline-flex;
+    gap: 1rem;
+}
+
+.carousel img {
+    height: 180px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    transition: transform 0.3s;
+}
+
+.carousel img:hover {
+    transform: scale(1.05);
+}

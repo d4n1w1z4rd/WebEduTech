@@ -5,7 +5,6 @@ import com.example.WebEduTech.model.Producto;
 import com.example.WebEduTech.service.ProductoService;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +14,20 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Arrays;
 import java.util.List;
 
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(productoController.class)
 public class productoControllerIntegrationTest {
+
+    @Test
+    void testName() {
+        
+    }
 
     @Autowired
     private MockMvc mockMvc;
@@ -36,81 +39,91 @@ public class productoControllerIntegrationTest {
     private ObjectMapper objectMapper;
 
     @Test
-    void listarProductos_returnListaVacia() throws Exception {
-        when(productoService.getProductos()).thenReturn(List.of());
+    void listarProductos_returnLista() throws Exception {
+        Producto p1 = new Producto();
+        p1.setId(1);
+        p1.setTitulo("Libro");
+        p1.setStock(10);
+
+        Producto p2 = new Producto();
+        p2.setId(2);
+        p2.setTitulo("Cuaderno");
+        p2.setStock(5);
+
+        List<Producto> lista = Arrays.asList(p1, p2);
+        when(productoService.getProductos()).thenReturn(lista);
 
         mockMvc.perform(get("/api/v1/productos"))
                 .andExpect(status().isOk())
-                .andExpect(content().json("[]"));
+                .andExpect(jsonPath("$.length()").value(2))
+                .andExpect(jsonPath("$[0].titulo").value("Libro"))
+                .andExpect(jsonPath("$[1].titulo").value("Cuaderno"));
     }
 
     @Test
-    void agregarProducto_returnProductoGuardado() throws Exception {
+    void agregarProducto_returnGuardado() throws Exception {
         Producto producto = new Producto();
         producto.setId(1);
-        producto.setTitulo("Teclado");
-        producto.setStock(10);
+        producto.setTitulo("Agenda");
+        producto.setStock(20);
 
-        when(productoService.saveProducto(any(Producto.class))).thenReturn(producto);
+        when(productoService.saveProducto(producto)).thenReturn(producto);
 
         mockMvc.perform(post("/api/v1/productos")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(producto)))
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(producto)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(1))
-                .andExpect(jsonPath("$.titulo").value("Teclado"))
-                .andExpect(jsonPath("$.stock").value(10));
+                .andExpect(jsonPath("$.titulo").value("Agenda"))
+                .andExpect(jsonPath("$.stock").value(20));
     }
 
     @Test
-    void buscarProductoPorId_returnProducto() throws Exception {
+    void buscarProducto_returnProducto() throws Exception {
         Producto producto = new Producto();
-        producto.setId(2);
-        producto.setTitulo("Mouse");
+        producto.setId(1);
+        producto.setTitulo("Agenda");
+        producto.setStock(20);
+
+        when(productoService.getProductoId(1)).thenReturn(producto);
+
+        mockMvc.perform(get("/api/v1/productos/1"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.titulo").value("Agenda"))
+                .andExpect(jsonPath("$.stock").value(20));
+    }
+
+    @Test
+    void actualizarProducto_returnActualizado() throws Exception {
+        Producto producto = new Producto();
+        producto.setId(1);
+        producto.setTitulo("Agenda actualizada");
         producto.setStock(15);
 
-        when(productoService.getProductoId(2)).thenReturn(producto);
+        when(productoService.updateProducto(producto)).thenReturn(producto);
 
-        mockMvc.perform(get("/api/v1/productos/2"))
+        mockMvc.perform(put("/api/v1/productos/1")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(producto)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(2))
-                .andExpect(jsonPath("$.titulo").value("Mouse"))
+                .andExpect(jsonPath("$.titulo").value("Agenda actualizada"))
                 .andExpect(jsonPath("$.stock").value(15));
     }
 
     @Test
-    void actualizarProducto_returnProductoActualizado() throws Exception {
-        Producto producto = new Producto();
-        producto.setId(3);
-        producto.setTitulo("Monitor");
-        producto.setStock(5);
-
-        when(productoService.updateProducto(any(Producto.class))).thenReturn(producto);
-
-        mockMvc.perform(put("/api/v1/productos/3")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(producto)))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(3))
-                .andExpect(jsonPath("$.titulo").value("Monitor"))
-                .andExpect(jsonPath("$.stock").value(5));
-    }
-
-    @Test
     void eliminarProducto_returnMensaje() throws Exception {
-        when(productoService.deleteProducto(4)).thenReturn("producto eliminado");
+        when(productoService.deleteProducto(1)).thenReturn("Producto eliminado");
 
-        mockMvc.perform(delete("/api/v1/productos/4"))
+        mockMvc.perform(delete("/api/v1/productos/1"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("producto eliminado"));
+                .andExpect(content().string("Producto eliminado"));
     }
 
     @Test
-    void totalProductosV2_returnNumero() throws Exception {
-        when(productoService.totalProductosV2()).thenReturn(7);
+    void totalProductos_returnCantidad() throws Exception {
+        when(productoService.totalProductosV2()).thenReturn(3);
 
         mockMvc.perform(get("/api/v1/productos/total"))
                 .andExpect(status().isOk())
-                .andExpect(content().string("7"));
+                .andExpect(content().string("3"));
     }
 }

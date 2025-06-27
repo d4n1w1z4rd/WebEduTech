@@ -1,6 +1,5 @@
 package com.example.WebEduTech.Controller;
 
-import com.example.WebEduTech.controller.carritoController;
 import com.example.WebEduTech.model.Producto;
 import com.example.WebEduTech.service.ProductoService;
 
@@ -12,16 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.List;
-
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.verify;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+import com.example.WebEduTech.controller.carritoController;
 
 @WebMvcTest(carritoController.class)
 public class carritoControllerIntegrationTest {
@@ -42,8 +39,8 @@ public class carritoControllerIntegrationTest {
         producto.setTitulo("Libro");
         producto.setStock(5);
 
+        // Simulamos que se encontró el producto
         when(productoser.getProductoId(1)).thenReturn(producto);
-        when(productoser.updateProducto(any(Producto.class))).thenReturn(producto);
 
         mockMvc.perform(post("/api/v1/carrito/agregar/1"))
                 .andExpect(status().isOk())
@@ -77,7 +74,7 @@ public class carritoControllerIntegrationTest {
     void verCarrito_returnListaVacia() throws Exception {
         mockMvc.perform(get("/api/v1/carrito"))
                 .andExpect(status().isOk())
-                .andExpect(content().json("[]"));
+                .andExpect(content().json("[]")); // al inicio el carrito estará vacío
     }
 
     @Test

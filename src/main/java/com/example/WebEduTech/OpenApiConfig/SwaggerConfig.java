@@ -16,5 +16,5 @@ public class SwaggerConfig {
             .description("Documentación de las API REST para la gestión de los microservicios de catalogo de cursos, usuarios y carrito de compras")
             .version("v2.0"));
         };
-    }
 }
+

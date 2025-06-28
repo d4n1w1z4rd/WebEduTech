@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.WebEduTech.service.IncidenciaService;
 
 @RestController
-@RequestMapping("/api/v1/incidencias")
-public class SistemaController {
+@RequestMapping("/api/v2/incidencias")
+public class SistemaControllerV2 {
 
     private final IncidenciaService incidenciaService;
 
-    public SistemaController(IncidenciaService incidenciaService) {
+    public SistemaControllerV2(IncidenciaService incidenciaService) {
 
         this.incidenciaService = incidenciaService;
     }

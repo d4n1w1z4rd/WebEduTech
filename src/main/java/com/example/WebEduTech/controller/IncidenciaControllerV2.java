@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/Incidencias")
-public class IncidenciaController {
+@RequestMapping("/api/v2/Incidencias")
+public class IncidenciaControllerV2 {
     @Autowired
     private IncidenciaService incidenciaService;
 

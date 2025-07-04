@@ -16,7 +16,7 @@ import com.example.WebEduTech.service.usuarioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-import com.example.WebEduTech.assemblers.UsuarioModelAssembler;
+import com.example.WebEduTech.assemblers.usuarioModelAssembler;
 
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
@@ -35,7 +35,7 @@ public class usuarioControllerV2 {
     private usuarioService serv;
 
     @Autowired
-    private UsuarioModelAssembler assembler;
+    private usuarioModelAssembler assembler;
 
     @Operation(summary = "Registrar usuarios", description = "Registra un nuevo usuario en el sistema")
     @PostMapping(value = "/registrar", produces = MediaTypes.HAL_JSON_VALUE)

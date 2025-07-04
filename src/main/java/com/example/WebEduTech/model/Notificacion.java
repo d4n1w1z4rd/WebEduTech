@@ -12,13 +12,14 @@ public class Notificacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
     private Long id;
 
     private String mensaje;
 
     private LocalDateTime fecha = LocalDateTime.now();
 
-    public Notificacion() {
+    public Notificacion(int i, String string, int j) {
         this.fecha = LocalDateTime.now();
     }
 
